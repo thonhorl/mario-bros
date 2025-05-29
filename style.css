@@ -1,0 +1,135 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+body {
+    background-color: #5c94fc; 
+    color: #fff;
+}
+
+
+header {
+    background-color: #ff0000; 
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.link a:hover {
+    color: #ffd700;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 30px;
+}
+
+.caixaEsquerda,
+.caixaDireita {
+    margin-top: 50PX;
+    margin-left: 100px;
+    margin-right: 80px;
+    flex: 1;
+}
+
+.caixaEsquerda img {
+    
+    width: 70%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.caixaDireita img {
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+
+#openModalBtn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ffcc00;
+    border: 3px solid #000;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    color: #000;
+    transition: transform 0.1s;
+}
+
+#openModalBtn:hover {
+    transform: translateY(2px);
+    background-color: #ffe066;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background: #fff;
+    color: #000;
+    margin: 10% auto;
+    padding: 20px 30px;
+    width: 80%;
+    max-width: 500px;
+    border: 3px solid #000;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+
+.resumo p {
+    
+    font-size: 25px;
+    line-height: 1.6;
+    color: #fff;
+}

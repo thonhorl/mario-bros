@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/favicon.ico" alt="">
+            </div>
+            <div class="link">
+                <a href="#">Home</a>
+                <a href="#">Detalhes</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="caixaEsquerda">
+            <div>
+                <img src="images/titulo.png" alt="Logo do Jogo">
+            </div>
+            <br>
+            <div class="resumo">
+                <p>
+                    Super Mario Bros. é um jogo de plataforma de rolagem lateral onde o jogador controla Mario ou Luigi,
+                    encanadores que precisam atravessar o Reino do Cogumelo para resgatar a Princesa Peach, raptada por Bowser.
+                    O objetivo é passar por vários níveis cheios de inimigos, obstáculos e power-ups, com a ajuda de saltos e outros movimentos.
+                </p>
+            </div>
+            <button id="openModalBtn">Ver Mais</button>
+        </div>
+
+        <div class="caixaDireita">
+            <img src="images/super-mario-chars.png" alt="Imagem do Jogo">
+        </div>
+    </div>
+
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Mais sobre o jogo</h2>
+            <p>
+                Super Mario Bros., lançado em 1985, revolucionou os videogames com sua jogabilidade envolvente,
+                design de fases criativo e personagens carismáticos. Desde então, tornou-se uma das franquias mais queridas
+                e reconhecidas mundialmente, influenciando gerações de jogadores.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
