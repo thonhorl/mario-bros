@@ -1,19 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const openModalBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.querySelector('.close-btn');
+const openModalBtn = document.getElementById('openModalBtn');
+const modal = document.getElementById('modal');
+const closeBtn = modal.querySelector('.close-btn');
+const youtubeVideo = document.getElementById('youtubeVideo');
 
-    openModalBtn.addEventListener('click', () => {
-        modal.style.display = 'block';
-    });
+// Link do vídeo do YouTube (embed) com autoplay
+const videoURL = "https://www.youtube.com/embed/TnGl01FkMMo?autoplay=1";
 
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
+openModalBtn.addEventListener('click', () => {
+  youtubeVideo.src = videoURL; // coloca o vídeo e inicia autoplay
+  modal.style.display = 'flex';
+});
 
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+function closeModal() {
+  modal.style.display = 'none';
+  youtubeVideo.src = ""; // remove o src para parar o vídeo
+}
+
+closeBtn.addEventListener('click', closeModal);
+
+// Fechar clicando fora do modal-content
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
 });

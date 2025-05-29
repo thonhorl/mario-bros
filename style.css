@@ -1,135 +1,184 @@
-
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-
-body {
-    background-color: #5c94fc; 
+  }
+  
+  /* Fonte clássica arcade (fallbacks) */
+  body {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #8B0000; /* vermelho escuro de fundo */
     color: #fff;
-}
-
-
-header {
-    background-color: #ff0000; 
-    padding: 15px 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-nav {
+    line-height: 1.5;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  /* Navegação */
+  nav {
+    background-color: #B22222; /* vermelho fogo */
+    padding: 1rem 2rem;
+    display: flex;
     align-items: center;
-}
-
-.link a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.link a:hover {
-    color: #ffd700;
-}
-
-
-.container {
-    display: flex;
     justify-content: space-between;
-    padding: 40px;
-    gap: 30px;
-}
-
-.caixaEsquerda,
-.caixaDireita {
-    margin-top: 50PX;
-    margin-left: 100px;
-    margin-right: 80px;
-    flex: 1;
-}
-
-.caixaEsquerda img {
-    
-    width: 70%;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.caixaDireita img {
-    width: 100%;
-    border-radius: 10px;
-    
-}
-
-
-#openModalBtn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background-color: #ffcc00;
-    border: 3px solid #000;
-    border-radius: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+  
+  nav .logo img {
+    height: 40px;
+  }
+  
+  nav .link a {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  nav .link a:hover {
+    color: #FFD700; /* amarelo ouro */
+  }
+  
+  /* Container principal */
+  .container {
+    display: flex;
+    padding: 2rem;
+    gap: 30rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Caixa esquerda */
+  .caixaEsquerda {
+    max-width: 600px;
+    flex: 1 1 350px;
+    background: #8B0000; /* vermelho vivo */
+    
+    border-radius: 12px;
+    padding: 1.5rem;
+    
+  }
+  
+  .caixaEsquerda img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .resumo p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #fff8dc; /* bege claro */
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  /* Botão "Ver Mais" */
+  button#openModalBtn {
+    margin-top: 1.5rem;
+    background-color: #FF0000; /* vermelho clássico Mario */
+    color: #fff;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 2px 2px 0 #000;
-    color: #000;
-    transition: transform 0.1s;
-}
-
-#openModalBtn:hover {
-    transform: translateY(2px);
-    background-color: #ffe066;
-}
-
-
-.modal {
-    display: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button#openModalBtn:hover {
+    background-color: #FFD700;
+    color: #B22222;
+    border-color: #B22222;
+  }
+  
+  /* Caixa direita */
+  .caixaDireita {
+    flex: 1 1 300px;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .caixaDireita img {
+    max-width: 100%;
+    
+    border-radius: 12px;
+    
+  }
+  
+  /* Modal */
+  .modal {
+    display: none; /* invisível */
     position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
+    z-index: 1000;
+    left: 0; top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background: #fff;
-    color: #000;
-    margin: 10% auto;
-    padding: 20px 30px;
-    width: 80%;
-    max-width: 500px;
-    border: 3px solid #000;
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .modal-content {
     position: relative;
-}
-
-.close-btn {
+    width: 90%;
+    max-width: 900px;
+    background: #B22222; /* vermelho vivo */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 40px #FFD700;
+    border: 4px solid #FFD700;
+  }
+  
+  /* Botão fechar */
+  .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
+    top: 12px;
+    right: 20px;
+    font-size: 34px;
     font-weight: bold;
+    color: #FFD700;
     cursor: pointer;
-    color: #ff0000;
-}
-
-.close-btn:hover {
-    color: #000;
-}
-
-
-.resumo p {
-    
-    font-size: 25px;
-    line-height: 1.6;
+    user-select: none;
+    transition: color 0.3s ease;
+    z-index: 10;
+  }
+  
+  .close-btn:hover {
     color: #fff;
-}
+  }
+  
+  /* Responsividade do vídeo */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    padding-top: 25px;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  /* Pequeno ajuste de texto para o body */
+  p, a, button {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+  }
+  
+  /* Opcional: import Google Fonts para a fonte arcade */
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
