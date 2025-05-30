@@ -1,184 +1,204 @@
-/* Reset básico */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+  background-color: #8B0000;
+  color: #fff;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #B22222;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav .links a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav .links a:hover {
+  color: #FFD700;
+}
+
+
+.container {
+  margin-top: 80px;
+  display: flex;
+  padding: 2rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.caixaEsquerda {
+  max-width: 600px;
+  flex: 1 1 350px;
+  background: #8B0000;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.caixaEsquerda img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.resumo p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #fff8dc;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+button#openModalBtn {
+  margin-top: 1.5rem;
+  background-color: #FF0000;
+  color: #fff;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button#openModalBtn:hover {
+  background-color: #FFD700;
+  color: #B22222;
+  border-color: #B22222;
+}
+
+.caixaDireita {
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caixaDireita img {
+  max-width: 200%;
+  border-radius: 12px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #B22222;
+  border: 4px solid #FFD700;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #FFD700;
+  padding: 2.5rem 1rem 1rem 1rem; 
+  max-width: 800px;
+  animation: popIn 0.3s ease-in-out;
+  position: relative;
+  overflow: visible; 
+
+
+@keyframes popIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
   }
-  
-  /* Fonte clássica arcade (fallbacks) */
-  body {
-    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
-    background-color: #8B0000; /* vermelho escuro de fundo */
-    color: #fff;
-    line-height: 1.5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
-  
-  /* Navegação */
-  nav {
-    background-color: #B22222; /* vermelho fogo */
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  }
-  
-  nav .logo img {
-    height: 40px;
-  }
-  
-  nav .link a {
-    color: #fff;
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  nav .link a:hover {
-    color: #FFD700; /* amarelo ouro */
-  }
-  
-  /* Container principal */
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background-color: #FF0000;
+  color: #fff;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 5;
+}
+
+
+.close-btn:hover {
+  background-color: #FFD700;
+  color: #B22222;
+  border-color: #B22222;
+}
+
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+
+p, a, button {
+  font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+}
+
+
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    padding: 2rem;
-    gap: 30rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Caixa esquerda */
-  .caixaEsquerda {
-    max-width: 600px;
-    flex: 1 1 350px;
-    background: #8B0000; /* vermelho vivo */
-    
-    border-radius: 12px;
-    padding: 1.5rem;
-    
-  }
-  
-  .caixaEsquerda img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .resumo p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #fff8dc; /* bege claro */
-    text-align: justify;
-    line-height: 1.6;
-  }
-  
-  /* Botão "Ver Mais" */
-  button#openModalBtn {
-    margin-top: 1.5rem;
-    background-color: #FF0000; /* vermelho clássico Mario */
-    color: #fff;
-    border: 2px solid #FFD700;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  button#openModalBtn:hover {
-    background-color: #FFD700;
-    color: #B22222;
-    border-color: #B22222;
-  }
-  
-  /* Caixa direita */
-  .caixaDireita {
-    flex: 1 1 300px;
-    max-width: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .caixaDireita img {
-    max-width: 100%;
-    
-    border-radius: 12px;
-    
-  }
-  
-  /* Modal */
-  .modal {
-    display: none; /* invisível */
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
     padding: 1rem;
   }
-  
-  .modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    background: #B22222; /* vermelho vivo */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 40px #FFD700;
-    border: 4px solid #FFD700;
+
+  .caixaEsquerda, .caixaDireita {
+    max-width: 100%;
+    flex: 1 1 auto;
   }
-  
-  /* Botão fechar */
-  .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    font-size: 34px;
-    font-weight: bold;
-    color: #FFD700;
-    cursor: pointer;
-    user-select: none;
-    transition: color 0.3s ease;
-    z-index: 10;
-  }
-  
-  .close-btn:hover {
-    color: #fff;
-  }
-  
-  /* Responsividade do vídeo */
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    padding-top: 25px;
-  }
-  
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 0 0 15px 15px;
-  }
-  
-  /* Pequeno ajuste de texto para o body */
-  p, a, button {
-    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
-  }
-  
-  /* Opcional: import Google Fonts para a fonte arcade */
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-  
+}

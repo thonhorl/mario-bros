@@ -1,57 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Super Mario Bros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal Mario</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="images/favicon.ico" alt="Logo" />
-      </div>
-      <div class="link">
-        <a href="#">Home</a>
-        <a href="#">Detalhes</a>
-      </div>
-    </nav>
-  </header>
 
+  
+  <nav>
+    <div class="logo">
+      <img src="images/logo-chapeu-mario.png" alt="Logo Mario">
+    </div>
+    <div class="links">
+      <a href="#">Início</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </div>
+  </nav>
+
+  
   <div class="container">
     <div class="caixaEsquerda">
-      <div>
-        <img src="images/titulo.png" alt="Logo do Jogo" />
-      </div>
-      <br />
+      <img src="images/titulo.png" alt="Imagem do Mario">
       <div class="resumo">
-        <p>
-          Super Mario Bros. é um jogo de plataforma de rolagem lateral onde o jogador controla Mario ou Luigi,
-          encanadores que precisam atravessar o Reino do Cogumelo para resgatar a Princesa Peach, raptada por Bowser.
-          O objetivo é passar por vários níveis cheios de inimigos, obstáculos e power-ups, com a ajuda de saltos e outros movimentos.
-        </p>
+        <p>Bem-vindo ao mundo do Mario! Clique no botão abaixo para assistir a um vídeo especial.</p>
       </div>
-      <button id="openModalBtn">Ver Mais</button>
+      <button id="openModalBtn">Assistir Vídeo</button>
     </div>
-
     <div class="caixaDireita">
-      <img src="images/super-mario-chars.png" alt="Imagem do Jogo" />
+      <img src="images/super-mario-chars.png" alt="Imagem lateral">
     </div>
   </div>
 
-  <!-- Modal com vídeo do YouTube -->
+  
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
+      <button class="close-btn">Fechar</button>
       <div class="video-wrapper">
-        <iframe
-          id="youtubeVideo"
-          src=""
-          title="Vídeo Super Mario Bros"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/TnGl01FkMMo" allowfullscreen></iframe>
       </div>
     </div>
   </div>
